@@ -1,0 +1,272 @@
+/* This CSS document is mostly borrowed from the hymaswood kegerface project.
+I have added some to it, and changed and fixed other things. There is a lot of
+redundancy and unused code, so I may attempt to update it with a cleaner copy at
+some point, but CSS isn't a strength of mine. */
+body
+{
+	font-family: 'Arial', sans-serif;
+	color:#FFF;
+	background:#242424 url('/kegerface/images/wood2.jpg') repeat ;
+	/*background:#002236;
+	*/
+}
+
+a {
+	text-decoration: none;
+	border: none;
+}
+
+
+h1
+{
+	margin: 0;
+	padding: 0;
+	text-transform: uppercase;
+	font-family: 'Oswald', sans-serif;
+	font-size:300%;
+	font-weight: normal;
+	color:#FFF;
+}
+
+h2
+{
+	margin: 0;
+	padding: 0;
+	text-transform: uppercase;
+	font-size:150%;
+	font-family: 'Oswald', sans-serif;
+	font-weight: normal;
+	color:#FFF
+
+}
+
+nav
+{
+	padding-top:15px;
+}
+
+nav a
+{
+	padding-left:10px;
+	padding-right:10px;
+	color:#EEE;
+}
+
+#label
+{
+	margin:auto;
+	width:200px;
+}
+
+#drink
+{
+	margin:auto;
+	width:210px;
+	padding-top:10px;
+}
+
+#container
+{
+	/* controls the width of the page. However, tables will extend outside of this
+	if they are too wide, and it will change item centering. So make sure this is 
+	set to at least as wide as your finished table. */
+	width:990px;
+	margin:auto;
+	
+}
+
+ol
+{
+	/* I don't think there's any ordered lists in the current version.
+	This could probably be removed. */
+	margin:0;
+	padding: 0 1.5em;
+}
+
+table
+{
+	color:#FFF;
+	/*background:#2483A6;
+*/
+	/*margin-top:30px;
+	*/
+	border-collapse:collapse;
+	width:990px;
+/*	border:5px solid #C1DAD7;*/
+}
+
+#list
+{
+	margin-top:30px;
+}
+
+#beernameblock
+{
+	width:100px;
+}
+
+#namegroup
+{
+	width:240px;
+	color:#FFF;
+	z-index:2;
+}
+
+#info
+{
+	width:auto;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+.aligntop
+{
+	vertical-align:text-top;
+}
+
+#ABV
+{
+	margin-top:auto;
+	margin-bottom:auto;
+}
+
+thead
+{
+	width:990px;
+}
+
+thead th
+{
+	font-family: 'Helvetica', sans-serif;
+	
+	/*padding:1em 1em .5em;
+ 	*/
+	/* I prefer px to em when aligning, but 
+	everything else seems aligned pretty well
+	so I didn't touch them. */
+	padding:8px 8px 4px;
+	border-bottom:1px dotted #FFF;
+ 	font-size:24px;
+ 	text-align:left;
+	background: rgba(128,128,128,.5);
+	height:30px;
+}
+
+.center
+{
+	text-align:center;
+}
+
+
+thead tr
+{
+
+}
+
+
+
+td
+{
+/*	font-family: 'Argo', serif;*/
+	padding:.5em 1em; 
+	/*padding: 4px 8px;
+	/* text-align:center; */
+	color:#FFF;
+}
+
+.hops
+{
+	width:200px;
+}
+
+.fontlarger
+{
+	font-size:22px;
+}
+
+
+tbody tr.opaque td
+{
+	
+	
+	color:#FFF;
+}
+
+#style
+{
+	margin:0;
+	padding-top:0;
+	padding-left:0;
+	padding-right:0;
+	padding-bottom:5px;
+}
+
+tfoot
+{
+
+}
+
+tfoot td
+{
+
+	padding-bottom:1.5em;
+}
+
+tfoot tr
+{
+
+}
+
+.opaque
+{
+	background: rgba(128,128,128,.2);
+	/* Neat little trick I found for doing
+	background opacity without making the
+	foreground elements opaque as well. The 
+	fourth value is the alpha channel and 
+	controls the opacity percentage. */
+	
+}
+
+.opaque td
+{
+	/* Unused - Probably not needed. */
+	
+}
+/* Something from hymas wood, I think he was trying to figure out the background opacity problem. */
+/*
+* html tr.odd td
+{
+	background:#C00;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='tr_bg.png', sizingMethod='scale');
+}
+*/
+
+/* middle was used to change the background color of certain columns and was part of hymas kegerface. I think the look is cleaner without. */
+/*
+#middle
+{
+	background-color:#005875;
+}
+*/
+
+img.aligncenter {
+	margin: 0px auto;
+}
+
+footer
+{
+	/* I set the footer height to give myself room at the bottom for Firebug. You can change it if you like. */
+	margin-top:50px;
+	height:100px;
+}
+
+#version
+{
+	float:right;
+	color: #aeef33;
+}
+footer div
+{
+	/* Not currently used. Can probably be removed. */
+}
