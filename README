@@ -1,18 +1,31 @@
-This service is a simple PHP wrapper for the Brewerydb.com API.
+This is a fun beer inventory program I wrote after seeing the hymaswood kegerface project running on a Raspberrypi.
+
+I borrowed a lot of design elements and some code from both the hymaswood kegerface, and the original kegerface projects.
+The images were taken from a fork of the hymaswood project.
+The program is meant to be run on a PHP-capable web server with a MySQL backend.
+Some additional PHP modules like php-curl and php-mysql may need to be installed on your webserver for this to work.
+
+My idea for the project is to use a cheap handheld barcode scanner to keep track of the beers using the UPC label on
+the side of the bottle (since most beers come with one). The UPC is then used to query the BreweryDB.com web API
+to locate info about the beer and store the relevant fields into the local MySQL database. Since BreweryDB.com does 
+not have UPC data for every beer on their website, the current version of the program requires you to manually look 
+up the beer on the website and enter the beer's ID from the URL manually. This will ensure you at least have UPC, ID, 
+and quantity data for the beer in the database; then you can manually fill in the missing values, or use the data as-is.
+
+NOTE: To query UPC data from the BreweryDB.com API, you need to sign up for a Premium level developer account, as the UPC
+endpoints are not available to the free API access. If you don't want to pay for Premium access, feel free to fork this 
+repo and modify it to not use any premium endpoints.
+
+Also included is the option to submit UPC code data to the BreweryDB.com API using the 'submit UPC' option from the navbar.
 
 
-Usage:
+NOTE: The menu item "Change data" under the inventory management is currently broken as I was never able to get the function
+to work the way I wanted, and decided that the occasional manual change directly to the database was less hassle. Maybe 
+someone else will find this a more worthwhile enterprise.
 
-$bdb = new Pintlabs_Service_Brewerydb($apikey);
-$bdb->setFormat('php'); // if you want to get php back.  'xml' and 'json' are also valid options.
+Most of the Manage Inventory buttons are self-explanatory, but if you aren't sure what they do, just check the code for details.
 
-Then you can call the API:
 
-try {
-    // The first argument to request() is the endpoint you want to call
-    // 'brewery/BrvKTz', 'beers', etc.
-    // The third parameter is the HTTP method to use (GET, PUT, POST, or DELETE)
-    $results = $bdb->request('beers', $params, 'GET'); // where $params is a keyed array of parameters to send with the API call.
-} catch (Exception $e) {
-    $results = array('error' => $e->getMessage());
-}
+
+To add a beer label header to your page, I used beerlabelizer.com as recommended by hymaswood. Some resizing of the resultant 
+image will probably be necessary, but most image software can handle that pretty easily.
